@@ -1,13 +1,10 @@
-
-Para llevar acabo esta actividad decidimos trabajar con el caso A del reto anterios que es acerdca del combustible y velocidad 
-
-
-Se agregó una lista definida como historial con el propósito de almacenar de manera secuencial los datos que se generan en cada iteración durante la simulación. Esta lista funciona como un almacen que registra paso a paso el cambio por el cual pasan la variables principales del sistema.
-
-Dentro de cada ciclo de la simulación, se creó un diccionario llamado registro, que contiene las variables en ese momnento que se realizó la iteraccion como por ejemplo el número de iteración, tiempo transcurrido, velocidad actual, combustible restante y la acción (acelerar o desacelerar). Este diccionario representa un conjunto ordenado y nombrado de datos para cada iteración específica. Cada uno de estos diccionarios se agrega a la lista historial, formando así un registro completo y detallado de toda la simulación.
-
-El objetivo fundamental de haber agregado tanto la lista como el diccionario es organizar y mantener toda la información de la simulación de forma clara. Ya que  permite no solo conocer el estado final de las variables, sino también analizar y mostrar cómo fue su cambio a lo largo de cada paso del proceso. Esta estructura permite la facil comprensión del comportamiento  del sistema y la toma de decisiones basadas en la información .
-
-Asimismo, al utilizar esta estructura de datos, permite la impresión ordenada de los resultados de cada iteración, lo que resulta útil para la validación y el análisis detallado de la simulación.
-
-En resumen, la incorporación de la lista y el diccionario contribuye significativamente a mejorar la organización, claridad y utilidad de la simulación, facilitando un manejo más sencillo y a la vez completo de los datos generados durante la simulacion.
+En este programa se emplean listas y diccionarios para manejar de forma organizada la información generada durante la simulación del comportamiento de un vehículo en relación con su combustible y su velocidad.
+ 
+ 
+La lista llamada **“historial”** cumple la función de almacenar los datos obtenidos en cada iteración del proceso. En cada ciclo del bucle principal, se crea un **diccionario denominado “registro”**, en el cual se guardan los valores correspondientes al número de iteración, el tiempo transcurrido, la velocidad alcanzada, el combustible restante y la acción realizada (acelerar o desacelerar). Este diccionario representa un estado del sistema en un momento determinado y luego se agrega a la lista “historial” mediante el método *append*. Gracias a esto, el programa conserva todos los resultados de forma ordenada y puede mostrar la evolución completa de la simulación.
+ 
+Además, el código utiliza un **diccionario llamado “constantes”**, en el que se almacenan los valores fijos del programa, como el consumo de combustible, el tiempo máximo, el intervalo de tiempo entre iteraciones y el nivel mínimo de combustible permitido. Este diccionario sirve para centralizar la información importante del sistema y facilita hacer ajustes sin tener que modificar varias partes del código. Así se mejora la claridad, la legibilidad y la posibilidad de actualizar los parámetros de la simulación fácilmente.
+ 
+Una vez terminada la ejecución, el programa recorre la lista “historial” para mostrar los resultados guardados y también utiliza **listas por comprensión** para extraer los valores de velocidad y combustible de cada registro. Con estas nuevas listas, se calculan los promedios, valores máximos y mínimos, lo que permite generar estadísticas completas sobre el desempeño del vehículo durante la simulación.
+ 
+En resumen, las listas y los diccionarios se implementaron para estructurar mejor los datos, hacer el código más limpio y permitir un análisis posterior. Las listas permiten almacenar varios registros de forma secuencial, mientras que los diccionarios organizan la información de cada registro usando claves que facilitan su acceso. Gracias a esta combinación, el código es más ordenado, eficiente y fácil de modificar, lo que demuestra un uso correcto y práctico de estas estructuras en Python.
