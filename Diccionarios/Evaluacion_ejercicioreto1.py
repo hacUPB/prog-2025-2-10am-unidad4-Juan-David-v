@@ -6,7 +6,6 @@ while True:
     opcion = input("Selecciona una opción: ").strip()
 
     if opcion == "1":
-        # === INICIO DE LA SIMULACIÓN ===
         historial = []
 
         constantes = {
@@ -26,7 +25,9 @@ while True:
         except ValueError:
             print("Entrada inválida: por favor ingrese valores numéricos.")
             continue
-
+        except ValueError:
+            print("Ingresa valores numéricos válidos.")
+            continue
         comb_actual = comb_inicial
         velocidad = v_inicial
         tiempo = 0
@@ -50,7 +51,6 @@ while True:
             tiempo = tiempo + constantes["t"]
             comb_actual = comb_actual - constantes["consumo"]
             i = i + 1
-
             registro = {
                 "iteracion": i,
                 "tiempo": tiempo,
@@ -92,8 +92,29 @@ while True:
         print("Estado final -> Velocidad:", round(velocidad, 2), "m/s | Combustible:", round(comb_actual, 2))
 
     elif opcion == "2":
+        print("\n--- Contenido del diccionario 'constantes' ---")
+        for clave, valor in constantes.items():
+            print(f"{clave}: {valor}")
+
+        if 'historial' in locals() and historial:
+            print("\n--- Contenido de la lista 'historial' ---")
+            for registro in historial:
+                print(
+                    f"Iteración {registro['iteracion']}: Tiempo = {registro['tiempo']}s, "
+                    f"Velocidad = {round(registro['velocidad'], 2)} m/s, "
+                    f"Combustible = {round(registro['combustible'], 2)}, "
+                    f"Acción = {registro['accion']}"
+                )
+        else:
+            print("\nLa lista 'historial' está vacía. Ejecuta primero la simulación (opción 1).")
+
+    elif opcion == "3":
         print("Saliendo del programa. ¡Hasta luego!")
         break
 
     else:
-        print("Opción no válida. Por favor, elige 1 o 2.")
+        print("Opción no válida. Por favor, ingresa 1, 2 o 3.")
+
+
+
+
