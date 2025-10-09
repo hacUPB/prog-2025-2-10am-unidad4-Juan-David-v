@@ -1,7 +1,19 @@
+# definimos fuera del ciclo
+constantes = {
+    "comb_min": 500,
+    "t": 5,
+    "tiempo_max": 60,
+    "consumo": 50
+}
+
+historial = [] # definimos la lista vacia
+
+
 while True:
     print("\n=== MENÚ PRINCIPAL ===")
     print("1. Ejecutar simulación de combustible y velocidad")
-    print("2. Salir")
+    print("2. Imprimir listas y diccionarios")
+    print("3. Salir")
 
     opcion = input("Selecciona una opción: ").strip()
 
@@ -106,7 +118,7 @@ while True:
                     f"Acción = {registro['accion']}"
                 )
         else:
-            print("\nLa lista 'historial' está vacía. Ejecuta primero la simulación (opción 1).")
+            print("\n La lista 'historial' está vacía. Ejecuta primero la simulación (opción 1).")
 
     elif opcion == "3":
         print("Saliendo del programa. ¡Hasta luego!")
